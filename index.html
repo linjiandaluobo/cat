@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小画板</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Mini Paint</p>
+          <h1>小画板</h1>
+          <p class="subtitle">打开就能画：选颜色、调粗细、橡皮擦、撤销、清空和下载。</p>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="绘画工具栏">
+        <label class="control">
+          <span>颜色</span>
+          <input id="colorPicker" type="color" value="#5b7cfa" aria-label="画笔颜色" />
+        </label>
+
+        <label class="control range-control">
+          <span>粗细 <output id="sizeValue">8</output>px</span>
+          <input id="brushSize" type="range" min="1" max="50" value="8" aria-label="画笔粗细" />
+        </label>
+
+        <button id="penBtn" class="tool-button active" type="button">画笔</button>
+        <button id="eraserBtn" class="tool-button" type="button">橡皮擦</button>
+        <button id="undoBtn" class="tool-button" type="button">撤销</button>
+        <button id="clearBtn" class="tool-button danger" type="button">清空</button>
+        <button id="downloadBtn" class="tool-button primary" type="button">下载 PNG</button>
+      </section>
+
+      <section class="canvas-wrap" aria-label="绘画区域">
+        <canvas id="drawingCanvas" width="1200" height="720">
+          你的浏览器不支持 Canvas，请升级浏览器后再试。
+        </canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
